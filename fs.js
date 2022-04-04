@@ -1,12 +1,3 @@
-/*
-    Constructor ----- listo
-    Save ------------ listo
-    DeleteAll ------- listo
-    Getall ---------- listo
-    Getbyid --------- listo
-    Deletebyid ------ 
-*/
-
 const fs = require('fs');
 
 class Contenedor {
@@ -29,7 +20,6 @@ class Contenedor {
                 if(err){
                     console.error(err);
                 }else{
-                    //console.log(this.fileName);
                     const dataParseada = JSON.parse(data)
                     console.log(dataParseada);
                 } 
@@ -67,8 +57,6 @@ class Contenedor {
             console.log("El archivo no existe")
         }
     };
-
-    //SOLO FALTA ESTA
     deleteById(idDelete){
         if(fs.existsSync(`./${this.fileName}`)){
             fs.readFile(`./${this.fileName}`,`utf-8`,(err, data)=>{  
@@ -107,8 +95,6 @@ const producto8 = {id:8,nombre:"Palmeritas" ,precio:150,img:"lksdfjg"};
 const producto9 = {id:9,nombre:"Torta frita",precio:210,img:"lksdfjg"};
 
 const archivo = new Contenedor("test.json");
-
-
 
 archivo.getById(7);
 
