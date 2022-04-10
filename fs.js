@@ -1,12 +1,3 @@
-/*
-    Constructor ----- listo
-    Save ------------ listo
-    DeleteAll ------- listo
-    Getall ---------- listo
-    Getbyid --------- listo
-    Deletebyid ------ 
-*/
-
 const fs = require('fs');
 
 class Contenedor {
