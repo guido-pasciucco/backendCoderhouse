@@ -1,3 +1,4 @@
+const Contenedor = require('./fs.js')
 const fs = require('fs')
 const express = require('express')
 const app = express()
@@ -26,7 +27,9 @@ const arr = [
     {id: 20, nombre: "Anteojos Runner"       ,descripcion: "Lorem Ipsum", precio: 7600}
 ]
 
-fs.writeFile("./test.json", JSON.stringify(arr), "utf8", (err) => {
+const catalogo = new Contenedor("./catalogo.json" )
+
+fs.writeFile("./catalogo.json", JSON.stringify(arr), "utf8", (err) => {
     if (err) {
         console.error(err);
         return;
@@ -45,27 +48,30 @@ app.get('/', (req, res) => {
     res.send(`<h1>Hola mundo</h1>
     <h2>Mi primer servidor con Express</h2>
     <p><b>/productos</b> para ver todos los productos</p>
-    <p><b>/random</b> para que devuelva un producto random</p>`)
+    <p><b>/random</b> para que devuelva un producto random</p>
+    <h3>Ambos se pueden ver por la terminal del VSC</h3>`)
 })
 
 app.get('/productos', (req, res) => {
-    fs.readFile("./test.json", "utf-8", (err, data) => {
+    fs.readFile("./catalogo.json", "utf-8", (err, data) => {
         if(err){
             return err
         }else{
-            res.send(data)
+            let datos = catalogo.getAll()
+            console.log(datos)
         }
     })
 })
 
 app.get('/random', (req, res) => {
-    fs.readFile("./test.json", "utf-8", (err, data) => {
+    fs.readFile("./catalogo.json", "utf-8", (err, data) => {
         if(err){
             return err
         }else{
             let parsedArr = JSON.parse(data)
             let randomProd = parsedArr[Math.floor(Math.random() * parsedArr.length)];
-            res.send(randomProd)
+            const randomID = randomProd.id 
+            res.send(catalogo.getById(randomID));
         }
     })
 })

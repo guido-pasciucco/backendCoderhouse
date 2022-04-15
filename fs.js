@@ -37,7 +37,7 @@ class Contenedor {
             }
         })
     }
-    getById = function(idGet){
+    getById(idGet){
         if(fs.existsSync(`./${this.fileName}`)){
             fs.readFile(`./${this.fileName}`,`utf-8`,(err, data)=>{  
                 if(err){
@@ -84,31 +84,10 @@ class Contenedor {
     };
 }
 
-const producto1 = {id:1,nombre:"Café"       ,precio:200,img:"lksdfjg"};
-const producto2 = {id:2,nombre:"Té"         ,precio:150,img:"lksdfjg"};
-const producto3 = {id:3,nombre:"Mate"       ,precio:210,img:"lksdfjg"};
-const producto4 = {id:4,nombre:"Pepas"      ,precio:200,img:"lksdfjg"};
-const producto5 = {id:5,nombre:"Medialunas" ,precio:150,img:"lksdfjg"};
-const producto6 = {id:6,nombre:"Masitas"    ,precio:210,img:"lksdfjg"};
-const producto7 = {id:7,nombre:"Facturas"   ,precio:200,img:"lksdfjg"};
-const producto8 = {id:8,nombre:"Palmeritas" ,precio:150,img:"lksdfjg"};
-const producto9 = {id:9,nombre:"Torta frita",precio:210,img:"lksdfjg"};
-
-const archivo = new Contenedor("test.json");
-
-archivo.getById(7);
-
 /* 
-    archivo.save(producto1);
-    archivo.save(producto2);
-    archivo.save(producto3);
-    archivo.save(producto4);
-    archivo.save(producto5);
-    archivo.save(producto6);
-    archivo.save(producto7);
-    archivo.save(producto8);
-    archivo.save(producto9);
+    const archivo = new Contenedor("test.json");
     archivo.getAll("./test.json")
+    archivo.getById(7);
     archivo.deleteById(4);
     archivo.deleteAll() 
 */
