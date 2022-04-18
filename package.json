@@ -4,7 +4,7 @@
     "file-system": "^2.2.2"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon index.js"
   },
   "name": "backend",
   "version": "1.0.0",
