@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./index.js"></script>
+    <script src="./prods.js"></script>
+    <div>
+        <h1>Lista de Productos en tiempo real</h1>
+        <form onsubmit="return addInfoProds()">
+            <input type="text" name="" id="nombreProd" placeholder="Nombre"><br>
+            <input type="text" name="" id="precioProd" placeholder="Precio"><br>
+            <input type="text" name="" id="stockProd" placeholder="Stock"><br><br>
+            <input type="submit" value="EnviarProducto">
+        </form>
+        <div id="cajaProd"></div>
+    </div>
+    <br><hr>
+    <div>   
+        <h1>Centro de Mensajes</h1>
+        <form onsubmit="return addInfo()">
+            <input type="text" name="" id="nb" placeholder="Nombre"><br>
+            <input type="text" name="" id="msn" placeholder="Mensaje"><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+        <div id="caja"></div>
+    </div>
+</body>
+</html> 
