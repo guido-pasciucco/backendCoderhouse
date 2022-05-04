@@ -1,14 +1,14 @@
-const socket = io();
+const socket1 = io();
 
-socket.on("productos", (data) => {
-    render(data);
-    socket.emit("message_client", "Catalogo de productos conectado");
+socket1.on("productos", (data) => {
+    renderProd(data);
+    socket1.emit("message_client", "Catalogo de productos conectado");
 });
 
 const renderProd = (data) => {
     let html = data.map((y)=>{
         return `
-            <p> <strong> ${y.nombre} </strong> : ${y.msn} </p>
+            <p> <strong> Producto: ${y.nombre} </strong> Precio: ${y.precio} </p>
         `
     }).join(" ")
     document.querySelector("#cajaProd").innerHTML = html;
@@ -20,7 +20,7 @@ const addInfoProds = () => {
         precio: document.querySelector("#precioProd").value , 
         stock: document.querySelector("#stockProd").value 
     }
-    socket.emit("dataProd", dataObjProd);
+    socket1.emit("dataProd", dataObjProd);
     return false
 }
 
