@@ -1,4 +1,4 @@
-const socket1 = io();
+/* const socket1 = io();
 
 socket1.on("productos", (data) => {
     renderProd(data);
@@ -26,4 +26,4 @@ const addInfoProds = () => {
 
 document.addEventListener("submit", (e) => {
     e.preventDefault()
-})
+}) */

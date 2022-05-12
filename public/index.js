@@ -1,4 +1,4 @@
-const socket = io();
+/* const socket = io();
 
 socket.on("mensajes", (data) => {
     console.log(data);
@@ -29,3 +29,4 @@ const addInfo = () => {
 document.addEventListener("submit", (e) => {
     e.preventDefault()
 })
+ */

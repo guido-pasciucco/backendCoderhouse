@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "timeStap" : "Date.now()",
+        "carrito" : []
+    },
+    {
+        "id": 2,
+        "timeStap" : "Date.now()",
+        "carrito" : []
+    },
+    {
+        "id": 3,
+        "timeStap" : "Date.now()",
+        "carrito" : []
+    },
+    {
+        "id": 4,
+        "timeStap" : "Date.now()",
+        "carrito" : []
+    },
+    {
+        "id": 5,
+        "timeStap" : "Date.now()",
+        "carrito" : []
+    }
+]
